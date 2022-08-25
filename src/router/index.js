@@ -37,6 +37,21 @@ export const constantRoutes = [
   }
 ]
 
+export const asyncRoutes = [
+  {
+    path: '/demo',
+    component: Layout,
+    children: [
+      {
+        path: 'g6',
+        name: 'g6',
+        component: () => import('@/views/demo/index'),
+        meta: { title: 'g6' }
+      }
+    ]
+  }
+]
+
 const createRouter = () => new Router({
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
