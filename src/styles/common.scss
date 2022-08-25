@@ -1,0 +1,35 @@
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+$var-padding-extend-func: 0 4 6 8 10 12 16 20 30;
+
+@mixin padding-extend-func($num) {
+  .pt#{$num} {
+    padding-top: #{$num}px;
+  }
+
+  .pr#{$num} {
+    padding-right: #{$num}px;
+  }
+
+  .pb#{$num} {
+    padding-bottom: #{$num}px;
+  }
+
+  .pl#{$num} {
+    padding-left: #{$num}px;
+  }
+
+  .padding#{$num} {
+    padding: #{$num}px;
+  }
+}
+
+@each $var in $var-padding-extend-func {
+  @include padding-extend-func($var);
+}
